@@ -1,0 +1,469 @@
+
+    @font-face {
+        font-family: "Krinkes Decor";
+        /*src: url('fonts/KrinkesDecor.ttf');*/
+        src: url('https://github.com/taufiqart/json/raw/main/KrinkesDecor.ttf');
+    }
+
+    html {
+        scroll-behavior: smooth !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 10px 0px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* ################ HEADER ################ */
+    .header {
+        background-color: #eee;
+        min-height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .header h1:before {
+        content: 'Royal Shop9';
+        position: absolute;
+        background: linear-gradient(to bottom right, #d4af37,#d4af37,#d4af37,#ffd700,#d4af37, #d4af37,#d4af37);
+        background: -webkit-linear-gradient(bottom right, #d4af37,#d4af37,#d4af37,#ffd700,#d4af37, #d4af37,#d4af37);
+        background-size: 400% 400%;
+        background-repeat: no-repeat;
+        text-shadow: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: -10px;
+        padding-top: 10px;
+        height: 150%;
+        animation: anim 10s ease-in infinite;
+    }
+
+    @keyframes anim {
+        0% {
+            background-position: 0%;
+        }
+
+        50% {
+            background-position: 100%;
+        }
+
+        100% {
+            background-position: 0%;
+        }
+    }
+
+    .header h1 {
+        font-family: Krinkes Decor;
+        display: inline-block;
+        position: relative;
+        padding-right: 60px;
+        padding-top: -10px;
+        height: 40px;
+        text-shadow: 1px 1px 4px yellow, 1px 1px 9px lightyellow;
+        color: white;
+        animation: glow 10s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 1px 1px 4px yellow, 1px 1px 9px lightyellow;
+
+        }
+
+        50% {
+            text-shadow: 1px 1px 4px transparent, 1px 1px 9px transparent;
+
+        }
+
+        100% {
+            text-shadow: 1px 1px 4px yellow, 1px 1px 9px lightyellow;
+
+        }
+    }
+
+    .menu {
+        display: inline-block;
+    }
+
+    .menu ul {
+        padding: 0;
+
+    }
+
+    .menu ul li {
+        display: inline-block;
+        position: relative;
+    }
+
+    .menu ul li a {
+        padding: 10px 20px;
+        text-decoration: none;
+        /*color: blueviolet;*/
+        color:#d4af37;
+    }
+
+    ul.submenu {
+        background-color: #eee;
+        border: 1px solid #ccc;
+        text-align: left;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        display: none;
+        z-index: 100;
+    }
+
+    .menu ul li:hover ul.submenu {
+        display: block;
+    }
+
+    ul.submenu li {
+        display: block;
+    }
+
+    .menu ul li:hover,
+    ul.submenu li:hover {
+        border-bottom: 2px solid #d4af37;
+    }
+
+    ul.submenu li a {
+        display: block;
+        padding: 5px 10px;
+        color:#d4af37;
+
+
+    }
+
+    /* ######################################## */
+
+    .jumbotron {
+        font-family: 'Raleway', sans-serif;
+        width: 100%;
+        padding: 80px 40px;
+        box-sizing: border-box;
+        text-align: center;
+        color: white;
+        background-color: #aaa;
+    }
+
+    .jumbotron {
+        background-color: #aaa;
+        background-image: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80");
+        background-size: cover;
+        position: relative;
+        animation: bg 200s ease-in infinite;
+        width: 100%;
+         /*size: 100%; */
+    }
+
+
+    .jumbotron h2,
+    .jumbotron p {
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.4;
+    }
+
+
+
+    /* ################ CONTENT ################ */
+    .content {
+        background-color: #ddd;
+        min-height: 500px;
+        overflow: auto;
+        overflow-x: hidden;
+        color:#d4af60;
+
+    }
+    .content h2{
+        color:#d4af37;
+    }
+
+    #container-product {
+        position: relative;
+        text-align: center;
+    }
+
+    .thumbnail {
+        background-color: white;
+        text-align: center;
+        padding: 10px;
+        width: 225px;
+        height: 220px;
+        margin: 10px;
+        float: left;
+        overflow: hidden;
+    }
+
+    .thumbnail a {
+        text-decoration: none;
+        color: black;
+    }
+    .thumbnail a .crop {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    .thumbnail a .crop img {
+        position: absolute;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+        background-color: black;
+        color: white;
+    }
+
+    .thumbnail a .crop img::after {
+        content: 'Taufiq Art';
+        /*background-image: url("http://via.placeholder.com/250x150");*/
+        position: absolute;
+        line-height: 150px;
+        margin: 0px 0px 0px -5px;
+        padding-left: 5px;
+        top: 0px;
+        left: 0px;
+        width: 230px;
+        height: 210px;
+        box-sizing: border-box;
+        font-weight: bolder;
+        font-size: 20px;
+        color: #b0b0b0;
+        background-color: #CCCCCC;
+
+    }
+
+    .thumbnail a .title-hover{
+        display: none;
+    }
+    .thumbnail a:hover .title-hover{
+        display: block;
+    }
+    .thumbnail a:hover .title-utama{
+        display: none;
+    }
+    .thumbnail a .price{
+        text-decoration: line-through;
+        margin-top: -20px;
+    }
+    .thumbnail a .overlayer {
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        text-align: center;
+        transition: 1s;
+    }
+
+    .thumbnail a .overlayer .text{
+        position: absolute;
+        line-height: 150px;
+        margin: 0px;
+        margin-left: 37.5px;
+        font-weight: bolder;
+        padding: 0px;
+        box-sizing: border-box;
+        border-radius: 100px; 
+        z-index: 2;
+        transition: 1s;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transition-delay: -0.3s;
+
+    }
+    .thumbnail a .overlayer .copyrigth {
+        position: absolute;
+        line-height: 280px;
+        margin: 0px 0px 0px -5px;
+        padding-left: 5px;
+        box-sizing: border-box;
+        left: 5px;
+        text-align: left;
+        font-weight: bold;
+        z-index: 2;
+        transition: 1s;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        width: 0;
+        height: 0;
+        font-size: 13px;
+        opacity: 0;
+    }
+    a .overlayer .blur {
+        z-index: 1;
+        overflow: hidden;
+        position: absolute;
+        background-color: rgb(255, 255, 255, .7);
+        filter: blur(8px);
+        --webkit-filter: blur(8px);
+        width: 225px;
+        height: 150px;
+    }
+
+    a:hover .overlayer {
+        opacity: 1;
+        width: auto;
+        height: auto;
+    }
+
+    a:hover .overlayer .text {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+
+    }
+    .thumbnail a:hover .overlayer .copyrigth {
+        opacity: 1;
+        width: 225px;
+        height: 150px;
+    }
+
+    .closed {
+        text-decoration: none;
+        color: black;
+        text-align: center;
+    }
+
+    .closed #closed {
+        position: relative;
+        margin: 0px auto;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: white;
+        margin-bottom: 10px;
+
+    }
+
+    .show {
+        position: fixed;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        top: 0px;
+        left: 0px;
+        background: rgba(0, 0, 0, 0);
+        transition: .8s;
+        padding: 50px 0 100px 0;
+        z-index: 99999;
+    }
+
+    .show:target {
+        width: auto;
+        height: auto;
+        bottom: 0px;
+        right: 0px;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .show img {
+        border: white 8px solid;
+        border-radius: 8px;
+        max-height: 0;
+        height: 0;
+        /*max-width: auto;
+        width: auto;*/
+        opacity: 0;
+        transition: .8s;
+    }
+
+    .show:target img {
+        opacity: 1;
+        max-height: 100%;
+        height: 100%;
+        /*max-width: auto;
+        width: auto;*/
+    }
+
+    @media screen and (max-width:802px) {
+        .container {
+            max-width: 800px;
+            /* width: 800px; */
+        }
+
+        .header h1 {
+            padding-right: 0px;
+        }
+
+     
+        .show {
+            padding: 100px 0 100px 0;
+
+        }
+
+        .show img {
+            max-width: 95%;
+            width: 95%;
+            max-height: auto;
+            height: auto;
+        }
+
+        .show:target img {
+            max-width: auto;
+            width: auto;
+            max-height: auto;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+        body {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 530px;
+             width: 530px; 
+        }
+
+        .header h1 {
+            padding-right: 0px;
+        }
+        .title-hover,.title-utama,.price{
+            font-size: 14px;
+        }
+        .show {
+            padding: 100px 0 100px 0;
+
+        }
+    }
+
+    @media screen and (max-width:360px) {
+        .container {
+            max-width: 530px;
+            width: 530px;
+        }
+    }
+
+    /* ######################################## */
+
+    .footer {
+        font-family: 'Raleway', sans-serif;
+        /*text-shadow: 2px 2px 4px black;*/
+        background-color: #ccc;
+        min-height: 50px;
+        padding: 20px;
+        text-align: center;
+        color: #d4af37;
+    }
